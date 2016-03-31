@@ -1,3 +1,3 @@
 # rabin-chess
-## Universal Windows App written in C# && js
+## Web chess app - c# backend - react frontend
 Software Engineering project
