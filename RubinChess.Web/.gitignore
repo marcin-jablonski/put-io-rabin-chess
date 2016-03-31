@@ -1,0 +1,4 @@
+# Frontend files
+node_modules/
+build/*.js
+npm-debug.log
