@@ -19,7 +19,7 @@ export default class SampleComponent extends React.Component {
           <Row>
             <Col className={style['col1']} xs={6} md={3}>Hello, world!</Col>
             <Col className={style['col2']} xs={6} md={3}>Hello, world!</Col>
-            //<Col className={style['col3']} xs={6} md={6}>Hello, world!</Col>
+            <Col className={style['col3']} xs={6} md={6}>Hello, world!</Col>
           </Row>
         </Grid>
         <Grid>
