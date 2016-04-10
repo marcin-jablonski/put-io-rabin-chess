@@ -3,6 +3,7 @@ import style from './sample_component'
 import {Grid, Row, Col} from 'react-flexbox-grid'
 
 import ChessBoard from  './chessboard/ChessBoard'
+import CounterApp from '../containers/CounterApp'
 /**
  * SampleComponent class
  */
@@ -23,8 +24,8 @@ export default class SampleComponent extends React.Component {
         </Grid>
         <Grid>
           <ChessBoard/>
+		  <CounterApp/>
         </Grid>
-
       </div>
     )
   }
