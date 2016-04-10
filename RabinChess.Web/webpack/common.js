@@ -4,7 +4,6 @@ var autoprefixer      = require('autoprefixer')
 var htmlPlugin        = require('html-webpack-plugin')
 var path              = require('path')
 var copyWebpackPlugin = require('copy-webpack-plugin')
-var chessboardjs      = require('chessboardjs')
 
 
 module.exports = {
