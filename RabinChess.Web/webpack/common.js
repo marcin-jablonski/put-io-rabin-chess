@@ -1,9 +1,10 @@
 /* eslint-disable */
 
-var autoprefixer = require('autoprefixer')
-var htmlPlugin   = require('html-webpack-plugin')
-var path         = require('path')
-
+var autoprefixer      = require('autoprefixer')
+var htmlPlugin        = require('html-webpack-plugin')
+var path              = require('path')
+var copyWebpackPlugin = require('copy-webpack-plugin')
+var chessboardjs      = require('chessboardjs')
 
 
 module.exports = {
@@ -39,6 +40,7 @@ module.exports = {
   output: {
     filename: '[hash].js',
     path: path.resolve('./build'),
+    publicPath: ''
   },
   plugins: [
     new htmlPlugin({
@@ -48,6 +50,12 @@ module.exports = {
       },
       template: 'index.html',
     }),
+    new copyWebpackPlugin([
+      {
+        from: './../node_modules/chessboardjs/www/img',
+        to:   './img'
+      }
+    ]),
   ],
   postcss: function() {
     return [
