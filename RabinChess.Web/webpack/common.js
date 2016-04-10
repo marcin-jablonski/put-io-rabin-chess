@@ -40,7 +40,6 @@ module.exports = {
   output: {
     filename: '[hash].js',
     path: path.resolve('./build'),
-    publicPath: ''
   },
   plugins: [
     new htmlPlugin({
