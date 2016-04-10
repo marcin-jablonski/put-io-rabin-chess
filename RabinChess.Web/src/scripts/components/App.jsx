@@ -11,14 +11,17 @@ export default class App extends React.Component {
    * Display heading
    * @return {div} App
    */
-  render() {
+   
+   
+   
+  render() {  
     return (
-      <ToolboxApp>
+	  <ToolboxApp>
         <div>
           <CustomButton />
           { this.props.children }
         </div>
       </ToolboxApp>
-    )
+    );
   }
 }
