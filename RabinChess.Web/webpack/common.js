@@ -1,9 +1,9 @@
 /* eslint-disable */
 
-var autoprefixer = require('autoprefixer')
-var htmlPlugin   = require('html-webpack-plugin')
-var path         = require('path')
-
+var autoprefixer      = require('autoprefixer')
+var htmlPlugin        = require('html-webpack-plugin')
+var path              = require('path')
+var copyWebpackPlugin = require('copy-webpack-plugin')
 
 
 module.exports = {
@@ -48,6 +48,12 @@ module.exports = {
       },
       template: 'index.html',
     }),
+    new copyWebpackPlugin([
+      {
+        from: './../node_modules/chessboardjs/www/img',
+        to:   './img'
+      }
+    ]),
   ],
   postcss: function() {
     return [
