@@ -18,7 +18,7 @@ function _createRequest(method, url, json, requestOptions = {}) {
     } = requestOptions;
 
     headers.Accept = '*/*' //Firefox requirement
-
+    
     let requestObject = {
       method,
       headers,
