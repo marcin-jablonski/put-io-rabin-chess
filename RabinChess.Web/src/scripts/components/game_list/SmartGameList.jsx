@@ -1,28 +1,26 @@
 import React, {PropTypes} from 'react'
+import {connect} from 'react-redux'
 
 import GameList from './GameList'
-import {httpGet} from '../../utils/api'
+import {getGames} from '../../actions/index'
 
-class SmartGameList extends React.Component {
+const mapStateToProps = (state) => {
+  return {
+    games: state.games
+  }
+}
 
-  constructor(props) {
-    super(props);
-
-    //i guess this is not redux way :v
-    let gameList;
-    httpGet('api/Games').then(response => gameList = response);
-
-    this.state = {
-      games: gameList
+const mapDispatchToProps = (dispatch) => {
+  return {
+    dispatch: () => {
+      dispatch(getGames())
     }
   }
-
-  render() {
-    return (
-      <GameList games={this.state.games} />
-    )
-  }
-
 }
+
+const SmartGameList = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(GameList)
 
 export default SmartGameList

@@ -11,12 +11,18 @@ class GameList extends React.Component {
     super(props);
 
     this.state = {
-      games: props.games
+      games: props.games,
+      dispatch: props.dispatch
     }
   }
 
   static PropTypes = {
-    games: PropTypes.arrayOf(PropTypes.object).isRequired
+    games: PropTypes.arrayOf(PropTypes.object).isRequired,
+    dispatch: PropTypes.func.isRequired
+  }
+
+  componentWillMount() {
+    this.state.dispatch();
   }
 
   render() {
