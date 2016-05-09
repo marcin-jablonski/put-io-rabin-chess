@@ -1,9 +1,9 @@
 import { combineReducers } from 'redux'
-import counter from './sample.jsx'
+import games from './games.jsx'
 
 /**
 * Root reducer for RubinChess
 */
-const reducer = combineReducers({counter})
+const reducer = combineReducers({games})
 
 export default reducer
