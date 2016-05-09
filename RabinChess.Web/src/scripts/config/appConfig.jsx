@@ -1,3 +1,3 @@
-export default {
-  apiUrl: 'http://localhost:1400/'
-}
+let apiUrl = 'http://localhost:1400/'
+
+export {apiUrl}
