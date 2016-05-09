@@ -1,14 +1,16 @@
 import React, {PropTypes} from 'react'
 
 import GameList from './GameList'
+import {httpGet} from '../../utils/api'
 
 class SmartGameList extends React.Component {
 
   constructor(props) {
     super(props);
 
-    //get games from api
-    let gameList = [{title: 'Title 1', tags: 'Some tags 1', id: 'ID1'}, {title: 'Title 2', tags: 'Some tags 2', id: 'ID2'}];
+    //i guess this is not redux way :v
+    let gameList;
+    httpGet('api/Games').then(response => gameList = response);
 
     this.state = {
       games: gameList
