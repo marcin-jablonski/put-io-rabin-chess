@@ -21,11 +21,11 @@ class GameList extends React.Component {
 
   render() {
     let {games} = this.props;
-    let gameListItems = games.map((game, i) => {
+    let gameListItems = games ? games.map((game, i) => {
       return (
         <GameListItem key={i} title={game.title} tags={game.tags} gameId={game.id} />
       )
-    })
+    }) : <ListSubHeader caption="No games found" />;
     return (
       <List selectable ripple>
         <ListSubHeader className={style['game_list_header']} caption="Your games" />
