@@ -21,7 +21,7 @@ class GameList extends React.Component {
     dispatch: PropTypes.func.isRequired
   }
 
-  componentWillMount() {
+  componentDidMount() {
     this.state.dispatch();
   }
 
