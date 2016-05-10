@@ -213,3 +213,4 @@ ModelManifest.xml
 
 # Config files
 **/connectionStrings.config
+RabinChess.Server.API/Properties/PublishProfiles/
