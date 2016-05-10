@@ -13,7 +13,7 @@ namespace RabinChess.Server.API.Controllers
         [HttpGet]
         public List<GameListItemViewModel> Get()
         {
-            return ContextFactory.GetGamesContext().GetGames(1).Cast<GameListItemViewModel>().ToList();
+            return ContextFactory.GetGamesContext().GetGames(1).Select(item => (GameListItemViewModel) item).ToList();
         }
     }
 }
