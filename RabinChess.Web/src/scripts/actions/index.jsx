@@ -1,5 +1,5 @@
-export function increment() {
+export function getGames() {
   return {
-    type: 'INCREMENT'
+    type: 'GET_GAMES'
   }
 }

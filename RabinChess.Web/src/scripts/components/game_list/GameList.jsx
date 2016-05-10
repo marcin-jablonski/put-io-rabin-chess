@@ -11,21 +11,27 @@ class GameList extends React.Component {
     super(props);
 
     this.state = {
-      games: props.games
+      games: props.games,
+      dispatch: props.dispatch
     }
   }
 
   static PropTypes = {
-    games: PropTypes.arrayOf(PropTypes.object).isRequired
+    games: PropTypes.arrayOf(PropTypes.object).isRequired,
+    dispatch: PropTypes.func.isRequired
+  }
+
+  componentDidMount() {
+    this.state.dispatch();
   }
 
   render() {
     let {games} = this.props;
-    let gameListItems = games.map((game, i) => {
+    let gameListItems = games ? games.map((game, i) => {
       return (
         <GameListItem key={i} title={game.title} tags={game.tags} gameId={game.id} />
       )
-    })
+    }) : <ListSubHeader caption="No games found" />;
     return (
       <List selectable ripple>
         <ListSubHeader className={style['game_list_header']} caption="Your games" />
