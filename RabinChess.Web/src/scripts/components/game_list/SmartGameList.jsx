@@ -67,6 +67,7 @@ class SmartGameList extends React.Component {
     this.state = {
       games: gameList
     }
+    console.log(this.state.games);
   }
 
   editTagsHandler() {
@@ -76,6 +77,14 @@ class SmartGameList extends React.Component {
   viewHandler(i) {
     this.props.changeGame(this.state.games[i].pgn);
     hashHistory.push('board');
+  }
+
+  deleteHandler(i) {
+    let tempGame = this.state.games.slice();
+    tempGame.splice(i,1);
+    this.setState({
+      games: tempGame
+    });
   }
 
   /**
@@ -88,6 +97,7 @@ class SmartGameList extends React.Component {
          games={this.state.games}
          editTagsHandler={this.editTagsHandler.bind(this)}
          viewHandler={this.viewHandler.bind(this)}
+         deleteHandler={this.deleteHandler.bind(this)}
       />
     )
   }
@@ -103,7 +113,6 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     changeGame: (game) => {
-      console.log(game);
       dispatch(Action.changeGame(game))
     },
     changeTags: (tags) => {

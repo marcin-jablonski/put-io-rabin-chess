@@ -44,6 +44,10 @@ class GameList extends React.Component {
     this.props.viewHandler(i);
   }
 
+  deleteHandler(i) {
+    this.props.deleteHandler(i);
+  }
+
   handleToggle() {
     this.setState({showEditDialog: !this.state.showEditDialog});
   }
@@ -62,6 +66,7 @@ class GameList extends React.Component {
           gameId={game.id}
           editTagsHandler={this.editTagsHandler.bind(this, i)}
           viewHandler={this.viewHandler.bind(this, i)}
+          deleteHandler={this.deleteHandler.bind(this, i)}
         />
       )
     })

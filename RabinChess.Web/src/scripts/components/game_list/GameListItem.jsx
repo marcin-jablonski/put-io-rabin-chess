@@ -1,4 +1,4 @@
-import React, {PropTypes} from 'react'
+  import React, {PropTypes} from 'react'
 import {ListItem} from 'react-toolbox'
 
 import {Button} from '../ui'
@@ -42,7 +42,7 @@ class GameListItem extends React.Component {
     let {white, black, whiteElo, blackElo, event} = tags;
     let viewButton = <Button key={1} className={style['game_list_button']} label='View' onClick={this.props.viewHandler} />
     let editButton = <Button key={2} className={style['game_list_button']} label='Edit' onClick={this.props.editTagsHandler} />
-    let deleteButton = <Button key={3} className={style['game_list_button']} label='Delete' />
+    let deleteButton = <Button key={3} className={style['game_list_button']} label='Delete' onClick={this.props.deleteHandler} />
     return(
       <ListItem className={style['game_list_item']} avatar={avatar} caption={`${white} - ${whiteElo} vs ${black} - ${blackElo}`} legend={event} rightActions={[viewButton, editButton, deleteButton]} ripple={false} />
     );
